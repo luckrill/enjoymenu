@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-10 17:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../newmenus.py:1764
+msgid " "
+msgstr ""
+
+#: ../newmenus.py:2074
+msgid "About"
+msgstr ""
+
+#: ../newmenus.py:2002
+msgid "About NewMenus"
+msgstr ""
+
+#: ../newmenus.py:1259
+msgid "Add"
+msgstr ""
+
+#: ../newmenus.py:1262
+msgid "Apply"
+msgstr ""
+
+#: ../newmenus.py:1765
+msgid "Check"
+msgstr ""
+
+#: ../newmenus.py:1260
+msgid "Clear"
+msgstr ""
+
+#: ../newmenus.py:184 ../newmenus.py:506 ../newmenus.py:812
+#: ../newmenus.py:1263 ../newmenus.py:1534 ../newmenus.py:1625
+#: ../newmenus.py:1767 ../newmenus.py:2009
+msgid "Close"
+msgstr ""
+
+#: ../newmenus.py:1254
+msgid "Command"
+msgstr ""
+
+#: ../newmenus.py:1756
+msgid "Current version:"
+msgstr ""
+
+#: ../newmenus.py:1251
+msgid "Del"
+msgstr ""
+
+#: ../newmenus.py:2071
+msgid "Famous Setup"
+msgstr ""
+
+#: ../newmenus.py:1760
+msgid "Features:"
+msgstr ""
+
+#: ../newmenus.py:1184
+msgid "Have a rest for yourself ......"
+msgstr ""
+
+#: ../newmenus.py:1275 ../newmenus.py:1633
+msgid "Help"
+msgstr ""
+
+#: ../newmenus.py:1627 ../newmenus.py:2072
+msgid "Help Info"
+msgstr ""
+
+#: ../newmenus.py:1265
+msgid "Language"
+msgstr ""
+
+#: ../newmenus.py:1184
+msgid "Message"
+msgstr ""
+
+#: ../newmenus.py:1253
+msgid "Name"
+msgstr ""
+
+#: ../newmenus.py:811
+msgid "New"
+msgstr ""
+
+#: ../newmenus.py:1758
+msgid "New version:"
+msgstr ""
+
+#: ../newmenus.py:1255
+msgid "Parameter"
+msgstr ""
+
+#: ../newmenus.py:1246
+msgid "Quick Menu Setup"
+msgstr ""
+
+#: ../newmenus.py:1002
+msgid "Restart"
+msgstr ""
+
+#: ../newmenus.py:1005
+msgid "Setup"
+msgstr ""
+
+#: ../newmenus.py:1001
+msgid "Shutdown"
+msgstr ""
+
+#: ../newmenus.py:505
+msgid "Sort"
+msgstr ""
+
+#: ../newmenus.py:2049 ../newmenus.py:2070
+msgid "System Setup"
+msgstr ""
+
+#: ../newmenus.py:1271
+msgid "Timer time"
+msgstr ""
+
+#: ../newmenus.py:1261 ../newmenus.py:1929 ../newmenus.py:2073
+msgid "Update"
+msgstr ""
+
+#: ../newmenus.py:1754
+msgid "Update Online"
+msgstr ""
+
+#: ../newmenus.py:1763
+msgid "Update:"
+msgstr ""
+
+#: ../newmenus.py:1195
+msgid "timer start"
+msgstr ""
+
+#: ../newmenus.py:1191
+msgid "timer stop"
+msgstr ""
+
+#: ../newmenus.py:1489
+msgid "update menu: "
+msgstr ""

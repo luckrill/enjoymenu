@@ -1,0 +1,12 @@
+# NewImages setup config
+image_weight = 800
+little_help = 0
+more_help = 1
+merge_space = 10
+image_format = png
+image_quality = high
+lang = 中文
+image_width = 800
+image_height = 600
+slideshow_timeout = 3
+quick_skip_num = 5

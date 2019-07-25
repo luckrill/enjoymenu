@@ -1,0 +1,6 @@
+version: 1.0
+platform: win64
+#platform: win32
+#platform: win64
+#platform: darwin
+#platform: linux

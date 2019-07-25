@@ -1,0 +1,45 @@
+version: 1.0
+
+new feature:
+* fix slider bug
+* fix image display bug
+
+= win32 =
+update_packages: http://127.0.0.1/update_newimages.zip
+update_program:
+update files:
++ file:; to:
++ file:; to:
+- file:
+- file:
+= end win32 =
+
+= win64 =
+update_packages: http://127.0.0.1/update_newimages.zip
+update_program:
+update files:
++ file:; to:
++ file:; to:
+- file:
+- file:
+= end win64 =
+
+= mac =
+update_packages: http://127.0.0.1/update_newimages.zip
+update_program:
+update files:
++ file:; to:
++ file:; to:
+- file:
+- file:
+= end mac =
+
+= linux =
+update_packages: http://127.0.0.1/update_newimages.zip
+update_program:
+update files:
++ file:; to:
++ file:; to:
+- file:
+- file:
+= end linux =

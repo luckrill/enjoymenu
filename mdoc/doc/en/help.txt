@@ -1,0 +1,85 @@
+<@>header<@>
+totals = 6
+<@>content<@>
+@__file_content_item__@
+NewMenus one of the more interesting software, expectations for each PC user.
+
+Mainly provides the following functions:
+Application: easy for you to quick start your frequently used programs.
+Note: the contents of a single page notes, record, save and read.
+Todo: Events management simple by sorting highlighting the best.
+Famous: idle time to look at the positive energy you prefer to post it.
+Message: Receive the good message sented by face2group.com, feel is good news, can be saved into the list of Famous. 
+Timer: from time to time to remind us return to relax the body.
+System settings: application maintenance information, set the timer, configure system parameters.
+
+NewMenus:
+Simple, easy to use, enough, no ads, no interference.
+Enjoy the simple, concise, elegant, etc. Zen intent to achieve.
+
+@__file_content_item__@
+Please add your favorite commonly used applications, provides two ways to increase:
+* Drag and drop the application to the top of the window.
+* Enter the [Settings] window, input application information
+ 
+"Application Information" to enter [Settings] window changes.
+
+Shutdown Restart time: no point is minutes, for example, 5 (5 minutes), little is 1.5 hours (1.5 hours)
+ 
+Shortcut to start the application:
+The window shortcut keys: Ctrl-F1 - Ctrl-F12 to start the sequence in front of 11 applications.
+Hope to help you quickly find and launch your frequently used programs.
+
+@__file_content_item__@
+Contents of a single page notes, record, save and read.
+Easy for you to put the most frequently need to see your notes, support for multiple interesting features:
+* Font Zoom In / Out: Ctrl - / Ctrl +
+* Automatic selection copied to clipboard
+* Automatic save.
+
+Shortcuts:
+Tab, Insert four spaces
+Ctrl a, Ctrl h Select Text
+Ctrl e, jump to the end of the current line, or jump to the beginning of the current line.
+Ctrl k, removed from the current position to the end of the line, delete the contents copied to the clipboard.
+Ctrl l, select the contents of the current line
+Ctrl y, copy the contents of the clipboard into the current location
+Ctrl Tab, switch Note, Todo, Famous
+other: Ctrl c, Ctrl v, left, right, up, down, Shift left, Shift right, Shift up, Shift down, PageUp, PageDown
+
+@__file_content_item__@
+Events management simple, to help you sort through the best highlights.
+Record your important matters, to help you choose the current contents of the highest priority, and queuing the content according to the first line identifies the sort of content.
+Shortcuts:
+Ctrl s, executive order
+Tab, Insert four spaces
+Ctrl a, Ctrl h Select Text
+Ctrl e, jump to the end of the current line, or jump to the beginning of the current line.
+Ctrl k, removed from the current position to the end of the line, delete the contents copied to the clipboard.
+Ctrl l, select the contents of the current line
+Ctrl y, copy the contents of the clipboard into the current location
+Ctrl Tab, switch Note, Todo, Famous
+other: Ctrl c, Ctrl v, left, right, up, down, Shift left, Shift right, Shift up, Shift down, PageUp, PageDown
+
+@__file_content_item__@
+Random text display some high energy, give us another taste of content, a way to relax.
+Support articles to add, modify, delete.
+Easy to replace favorite content.
+
+@__file_content_item__@
+message, receive online message
+message is short and share our life
+if you like one message, can save to famous and random show to you.
+if you have good message hope share with me, we can share to many people.
+if don't like our message, you can close message in setup UI.
+
+@__file_content_item__@
+PC, mobile phones are more hurt our eyes and nerves, according to the time you set timer to remind you: let yourself rest yourself.
+Shortcuts:
+Ctrl t timer off or on, the upper window displays the timer job status "|>"
+
+@__file_content_item__@
+Maintenance application command: Support add, modify, delete, sort.
+Set the timer: The default is 60 minutes.
+Configure system parameters: whether to open the Help information, multi-language selection
+

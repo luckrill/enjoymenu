@@ -1,0 +1,4 @@
+Emacs服务::D:\Program Files\emacs-24\bin\runemacs.exe::
+Firefox::C:\Program Files (x86)\Mozilla Firefox\firefox.exe::
+SecureCRT::C:\Program Files (x86)\SecureCRT\SecureCRT.EXE::
+Outlook::C:\Program Files (x86)\Microsoft Office\OFFICE11\OUTLOOK.EXE::

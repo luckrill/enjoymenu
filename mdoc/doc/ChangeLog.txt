@@ -1,0 +1,5 @@
+* 2015.2.6 Release NewMenus 2.1
+** fix kill current line bug
+* 2014.12.22 Release NewMenus 2.0
+** Refactor newmenus and add message function etc.
+

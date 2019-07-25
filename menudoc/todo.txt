@@ -1,0 +1,5 @@
+1, i18n support
+2, about
+3, help
+4, update         pass         pass        pass        pass
+5, try to test killtest killtest kill 

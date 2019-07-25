@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-11 15:20+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../main.py:3226
+msgid " "
+msgstr ""
+
+#: ../main.py:3471
+msgid "About"
+msgstr "关于"
+
+#: ../main.py:3413
+msgid "About NewImages"
+msgstr "关于NewImages"
+
+#: ../main.py:3034
+msgid "Add"
+msgstr "增加"
+
+#: ../main.py:3027
+msgid "Cancel"
+msgstr "取消"
+
+#: ../main.py:769
+msgid "Change"
+msgstr "改变"
+
+#: ../main.py:1304 ../main.py:2068
+msgid "ChooseAdirectory:"
+msgstr "选择目录"
+
+#: ../main.py:771 ../main.py:1700 ../main.py:2356 ../main.py:2767
+#: ../main.py:3229 ../main.py:3415
+msgid "Close"
+msgstr "关闭"
+
+#: ../main.py:2342
+msgid "Cols:"
+msgstr "列："
+
+#: ../main.py:765 ../main.py:1691
+msgid "Copyto"
+msgstr "拷贝到"
+
+#: ../main.py:3219
+msgid "Current version:"
+msgstr "当前版本："
+
+#: ../main.py:766 ../main.py:1692 ../main.py:3035
+msgid "Delete"
+msgstr "删除"
+
+#: ../main.py:1360
+msgid "Delete Message"
+msgstr "删除消息"
+
+#: ../main.py:1138
+msgid "Do you want to use selects images?"
+msgstr "你需要使用已经选择的图片吗？"
+
+#: ../main.py:2927
+msgid "Famous Info"
+msgstr "名言信息"
+
+#: ../main.py:3468
+msgid "Famous Setup"
+msgstr "名言设置"
+
+#: ../main.py:3223
+msgid "Features:"
+msgstr "特性"
+
+#: ../main.py:757
+msgid "Format"
+msgstr "格式"
+
+#: ../main.py:3089 ../main.py:3469
+msgid "Help Info"
+msgstr "帮助信息"
+
+#: ../main.py:1777
+msgid "Image help information"
+msgstr "图片帮助信息"
+
+#: ../main.py:762
+msgid "Invert"
+msgstr "反转"
+
+#: ../main.py:2743
+msgid "Language"
+msgstr "语言"
+
+#: ../main.py:767 ../main.py:2355
+msgid "Merge"
+msgstr "合并"
+
+#: ../main.py:2324
+msgid "Merge Image"
+msgstr "合并照片"
+
+#: ../main.py:3221
+msgid "New version:"
+msgstr "新版本："
+
+#: ../main.py:1686
+msgid "Next"
+msgstr "下一个"
+
+#: ../main.py:752
+msgid "Out Path"
+msgstr "输出路径"
+
+#: ../main.py:2344
+msgid "OutFile:"
+msgstr "输出文件："
+
+#: ../main.py:2425
+msgid "Please input single image size: 800*600 or 400*300 ... etc, input max cols: 2 or 3 or 4 ..."
+msgstr "请输入单个图片尺寸：800*600 or 400*300 ... etc, 输入列: 2 or 3 or 4 ..."
+
+#: ../main.py:913
+msgid "Please use '...' button select a image path at first"
+msgstr "请使用 '...' 按钮首先选择一个图片路径"
+
+#: ../main.py:763
+msgid "Remove"
+msgstr "移出"
+
+#: ../main.py:2766
+msgid "Reset"
+msgstr "重置"
+
+#: ../main.py:1866 ../main.py:2124
+msgid "Rotate save Message"
+msgstr "反转保存消息"
+
+#: ../main.py:1695 ../main.py:3026
+msgid "Save"
+msgstr "保存"
+
+#: ../main.py:1690
+msgid "Select"
+msgstr "选择"
+
+#: ../main.py:1139
+msgid "Select yes/no Message"
+msgstr "选择 是/否 消息"
+
+#: ../main.py:764
+msgid "Select*"
+msgstr "选择*"
+
+#: ../main.py:2078
+msgid "Selects copyto"
+msgstr "选择拷贝到"
+
+#: ../main.py:770
+msgid "Setup"
+msgstr "设置"
+
+#: ../main.py:2340
+msgid "Size:"
+msgstr "尺寸："
+
+#: ../main.py:1689
+msgid "Slide"
+msgstr "滑块"
+
+#: ../main.py:768
+msgid "SlideShow"
+msgstr "幻灯片"
+
+#: ../main.py:2764 ../main.py:3451 ../main.py:3467
+msgid "System Setup"
+msgstr "系统设置"
+
+#: ../main.py:1685
+msgid "Up"
+msgstr "前一个"
+
+#: ../main.py:3227 ../main.py:3470
+msgid "Update"
+msgstr "升级"
+
+#: ../main.py:3217
+msgid "Update Online"
+msgstr "在线升级"
+
+#: ../main.py:3225
+msgid "Update:"
+msgstr "升级："
+
+#: ../main.py:2761
+msgid "default open help"
+msgstr "默认打开帮助"
+
+#: ../main.py:2758
+msgid "default slide time"
+msgstr "默认滑动时间"
+
+#: ../main.py:2755
+msgid "default width height"
+msgstr "默认 宽度 高度"
+
+#: ../main.py:1359
+msgid "delete!"
+msgstr "删除"
+
+#: ../main.py:775
+msgid "dirs"
+msgstr "目录"
+
+#: ../main.py:2749
+msgid "photo format"
+msgstr "图片格式"
+
+#: ../main.py:90
+msgid "please don't remind again"
+msgstr "请不要再次提醒"
+
+#: ../main.py:2350
+msgid "preview"
+msgstr "预览"
+
+#: ../main.py:1865 ../main.py:2123
+msgid "save will overwrite the original image file!!!"
+msgstr "保存会覆盖原始文件！！！"
+
+#: ../main.py:2077
+msgid "selects copyto?"
+msgstr "拷贝已经选择的图片吗？"

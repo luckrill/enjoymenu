@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-30 13:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid " "
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "About NewImages"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Choose a directory:"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Cols:"
+msgstr ""
+
+msgid "Copyto"
+msgstr ""
+
+msgid "Current version:"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete Image Message"
+msgstr ""
+
+msgid "Delete image from your PC, Please confirm!!!"
+msgstr ""
+
+msgid "Display All"
+msgstr ""
+
+msgid "Do you want to select \"select*\" to execute copyto?"
+msgstr ""
+
+msgid "Do you want to use selects images?"
+msgstr ""
+
+msgid "Famous Info"
+msgstr ""
+
+msgid "Famous Setup"
+msgstr ""
+
+msgid "Features:"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Help Info"
+msgstr ""
+
+msgid "Invert"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Merge Image"
+msgstr ""
+
+msgid "New version:"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Or"
+msgstr ""
+
+msgid "Out Path"
+msgstr ""
+
+msgid "OutFile:"
+msgstr ""
+
+msgid "PageUp/PageDown support quick skip; select* --> merge; +-90 --> Save"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Please don't remind again"
+msgstr ""
+
+msgid "Please input single image size: 800*600 or 400*300 ... etc, input max cols: 2 or 3 or 4 ..."
+msgstr ""
+
+msgid "Please use '...' button select a image path at first"
+msgstr ""
+
+msgid "Quick skip num"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Rotate Save Message"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save All"
+msgstr ""
+
+msgid "Save will overwrite the original image file!!!"
+msgstr ""
+
+msgid "Select \"selects\"?"
+msgstr ""
+
+msgid "Select yes/no Message"
+msgstr ""
+
+msgid "Select*"
+msgstr ""
+
+msgid "Setup"
+msgstr ""
+
+msgid "Size:"
+msgstr ""
+
+msgid "SlideShow"
+msgstr ""
+
+msgid "System Setup"
+msgstr ""
+
+msgid "Up"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Update Online"
+msgstr ""
+
+msgid "Update:"
+msgstr ""
+
+msgid "default open help"
+msgstr ""
+
+msgid "default slide time"
+msgstr ""
+
+msgid "default width height"
+msgstr ""
+
+msgid "dirs"
+msgstr ""
+
+msgid "photo format"
+msgstr ""
+
+msgid "preview"
+msgstr ""
+
+msgid "select* --> merge, Format: x% --> change"
+msgstr ""

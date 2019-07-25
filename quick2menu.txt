@@ -1,0 +1,5 @@
+quickmenu write at: 2014-05-07 16:33
+Emacs::D:\Program Files\emacs-24\bin\runemacs.exe::
+Firefox::C:\Program Files (x86)\Mozilla Firefox\firefox.exe::
+SecureCRT::C:\Program Files (x86)\SecureCRT\SecureCRT.EXE::
+Outlook::C:\Program Files (x86)\Microsoft Office\OFFICE11\OUTLOOK.EXE::

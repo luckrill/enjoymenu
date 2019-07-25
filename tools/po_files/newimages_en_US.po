@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-11 17:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../main.py:3246
+msgid " "
+msgstr ""
+
+#: ../main.py:3491
+msgid "About"
+msgstr ""
+
+#: ../main.py:3433
+msgid "About NewImages"
+msgstr ""
+
+#: ../main.py:3054
+msgid "Add"
+msgstr ""
+
+#: ../main.py:3047
+msgid "Cancel"
+msgstr ""
+
+#: ../main.py:789
+msgid "Change"
+msgstr ""
+
+#: ../main.py:1324 ../main.py:2088
+msgid "ChooseAdirectory:"
+msgstr ""
+
+#: ../main.py:791 ../main.py:1720 ../main.py:2376 ../main.py:2787
+#: ../main.py:3249 ../main.py:3435
+msgid "Close"
+msgstr ""
+
+#: ../main.py:2362
+msgid "Cols:"
+msgstr ""
+
+#: ../main.py:785 ../main.py:1711
+msgid "Copyto"
+msgstr ""
+
+#: ../main.py:3239
+msgid "Current version:"
+msgstr ""
+
+#: ../main.py:786 ../main.py:1712 ../main.py:3055
+msgid "Delete"
+msgstr ""
+
+#: ../main.py:1380
+msgid "Delete Message"
+msgstr ""
+
+#: ../main.py:1158
+msgid "Do you want to use selects images?"
+msgstr ""
+
+#: ../main.py:2947
+msgid "Famous Info"
+msgstr ""
+
+#: ../main.py:3488
+msgid "Famous Setup"
+msgstr ""
+
+#: ../main.py:3243
+msgid "Features:"
+msgstr ""
+
+#: ../main.py:777
+msgid "Format"
+msgstr ""
+
+#: ../main.py:3109 ../main.py:3489
+msgid "Help Info"
+msgstr ""
+
+#: ../main.py:1797
+msgid "Image help information"
+msgstr ""
+
+#: ../main.py:782
+msgid "Invert"
+msgstr ""
+
+#: ../main.py:2763
+msgid "Language"
+msgstr ""
+
+#: ../main.py:787 ../main.py:2375
+msgid "Merge"
+msgstr ""
+
+#: ../main.py:2344
+msgid "Merge Image"
+msgstr ""
+
+#: ../main.py:3241
+msgid "New version:"
+msgstr ""
+
+#: ../main.py:1706
+msgid "Next"
+msgstr ""
+
+#: ../main.py:772
+msgid "Out Path"
+msgstr ""
+
+#: ../main.py:2364
+msgid "OutFile:"
+msgstr ""
+
+#: ../main.py:2445
+msgid "Please input single image size: 800*600 or 400*300 ... etc, input max cols: 2 or 3 or 4 ..."
+msgstr ""
+
+#: ../main.py:933
+msgid "Please use '...' button select a image path at first"
+msgstr ""
+
+#: ../main.py:783
+msgid "Remove"
+msgstr ""
+
+#: ../main.py:2786
+msgid "Reset"
+msgstr ""
+
+#: ../main.py:1886 ../main.py:2144
+msgid "Rotate save Message"
+msgstr ""
+
+#: ../main.py:1715 ../main.py:3046
+msgid "Save"
+msgstr ""
+
+#: ../main.py:1710
+msgid "Select"
+msgstr ""
+
+#: ../main.py:1159
+msgid "Select yes/no Message"
+msgstr ""
+
+#: ../main.py:784
+msgid "Select*"
+msgstr ""
+
+#: ../main.py:2098
+msgid "Selects copyto"
+msgstr ""
+
+#: ../main.py:790
+msgid "Setup"
+msgstr ""
+
+#: ../main.py:2360
+msgid "Size:"
+msgstr ""
+
+#: ../main.py:1709
+msgid "Slide"
+msgstr ""
+
+#: ../main.py:788
+msgid "SlideShow"
+msgstr ""
+
+#: ../main.py:2784 ../main.py:3471 ../main.py:3487
+msgid "System Setup"
+msgstr ""
+
+#: ../main.py:1705
+msgid "Up"
+msgstr ""
+
+#: ../main.py:3247 ../main.py:3490
+msgid "Update"
+msgstr ""
+
+#: ../main.py:3237
+msgid "Update Online"
+msgstr ""
+
+#: ../main.py:3245
+msgid "Update:"
+msgstr ""
+
+#: ../main.py:2781
+msgid "default open help"
+msgstr ""
+
+#: ../main.py:2778
+msgid "default slide time"
+msgstr ""
+
+#: ../main.py:2775
+msgid "default width height"
+msgstr ""
+
+#: ../main.py:1379
+msgid "delete!"
+msgstr ""
+
+#: ../main.py:795
+msgid "dirs"
+msgstr ""
+
+#: ../main.py:2769
+msgid "photo format"
+msgstr ""
+
+#: ../main.py:110
+msgid "please don't remind again"
+msgstr ""
+
+#: ../main.py:2370
+msgid "preview"
+msgstr ""
+
+#: ../main.py:1885 ../main.py:2143
+msgid "save will overwrite the original image file!!!"
+msgstr ""
+
+#: ../main.py:2097
+msgid "selects copyto?"
+msgstr ""

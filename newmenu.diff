@@ -1,0 +1,176 @@
+--- newmenus.py	(original)
++++ newmenus.py	(refactored)
+@@ -8,16 +8,17 @@
+ import shutil
+ import random
+ import zipfile
+-import urllib2
++import urllib.request, urllib.error, urllib.parse
+ import platform
+ import wx.media
+ import webbrowser
+ import winshell
++import importlib
+ 
+ # if platform.system() == "Windows":
+ #     import win32con
+ 
+-reload(sys)
++importlib.reload(sys)
+ sys.setdefaultencoding("utf-8")
+ 
+ L = wx.Locale()
+@@ -136,7 +137,7 @@
+             if (line.startswith("#")):
+                 continue
+             li = line.split("=")
+-            li = map(lambda x: x.strip(), li)
++            li = [x.strip() for x in li]
+             if li[0] == "lang":
+                 dbmenus.current["lang"] = li[1]
+             elif li[0] == "timer_timeout":
+@@ -176,7 +177,7 @@
+         """save window config info to current dict and config file"""
+         #print "Config Save"
+         fd = open(dbmenus.config_file, 'w')
+-        for key in dbmenus.current.keys():
++        for key in list(dbmenus.current.keys()):
+             fd.write(str(key) + " = " + str(dbmenus.current[key]) + "\n")
+         fd.close()
+ 
+@@ -238,8 +239,8 @@
+         #filename = os.path.basename(url)
+         filename = os.path.join(dbmenus.basepath_doc, os.path.basename(url))
+         try:
+-            u = urllib2.urlopen(url)
+-        except urllib2.HTTPError, e:
++            u = urllib.request.urlopen(url)
++        except urllib.error.HTTPError as e:
+             # print e.fp.read()
+             return False
+ 
+@@ -1024,11 +1025,11 @@
+         self.text_multi_text.SetFont(dbmenus.big_font)
+         self.text_multi_text.SetBackgroundColour(dbmenus.sys_color)
+         self.label_num = wx.StaticText(self, -1, "")
+-        button_update = wx.Button(self, -1, label=u"↓↓", size=(40, -1))
+-        button_first = wx.Button(self, -1, label=u"|＜", size=(40, -1))
+-        button_last = wx.Button(self, -1, label=u"＞|", size=(40, -1))
+-        button_up = wx.Button(self, -1, label=u"＜", size=(40, -1))
+-        button_next = wx.Button(self, -1, label=u"＞", size=(40, -1))
++        button_update = wx.Button(self, -1, label="↓↓", size=(40, -1))
++        button_first = wx.Button(self, -1, label="|＜", size=(40, -1))
++        button_last = wx.Button(self, -1, label="＞|", size=(40, -1))
++        button_up = wx.Button(self, -1, label="＜", size=(40, -1))
++        button_next = wx.Button(self, -1, label="＞", size=(40, -1))
+         button_save = wx.Button(self, -1, label=_("Save"))
+         button_share = wx.Button(self, -1, label=_("Share"))
+         button_close = wx.Button(self, -1, label=_("Close"))
+@@ -1233,7 +1234,7 @@
+         self.timer.Start(10*60*1000) # 10 minutes
+ 
+         # ‖ 〉        
+-        self.timer_state = wx.StaticText(self, -1, u"〉 ")
++        self.timer_state = wx.StaticText(self, -1, "〉 ")
+         button_shutdown = wx.Button(self, label=_("Shutdown"), size=(-1, 30))
+         button_restart = wx.Button(self, label=_("Restart"), size=(-1, 30))
+         button_lock = wx.Button(self, label=_("Lock"), size=(-1, 30))
+@@ -1281,9 +1282,9 @@
+         self.Bind(wx.EVT_BUTTON, self.OnSetup, button_setup)
+ 
+         if dbmenus.global_timer_enable:
+-            self.timer_state.SetLabel(u"〉 ")
++            self.timer_state.SetLabel("〉 ")
+         else:
+-            self.timer_state.SetLabel(u"‖ ")
++            self.timer_state.SetLabel("‖ ")
+ 
+         index = dbmenus.current["nb"]
+         self.nb.SetSelection(index)
+@@ -1815,19 +1816,19 @@
+         if dbmenus.global_timer_enable:
+             if self.timer.IsRunning():
+                 self.timer.Stop()
+-                self.middlePanel.timer_state.SetLabel(u"‖ ")
++                self.middlePanel.timer_state.SetLabel("‖ ")
+                 self.SetMessageValue(_("Timer stop"))
+             else:
+                 value = dbmenus.current["timer_timeout"]*60*1000
+                 self.timer.Start(value)
+                 self.timer_current_value = value
+                 # self.timer.Start(dbmenus.current["timer_timeout"]*60*1000)
+-                self.middlePanel.timer_state.SetLabel(u"〉 ")
++                self.middlePanel.timer_state.SetLabel("〉 ")
+                 self.SetMessageValue(_("Timer start"))
+         else:
+             if self.timer.IsRunning():
+                 self.timer.Stop()
+-                self.middlePanel.timer_state.SetLabel(u"‖ ")
++                self.middlePanel.timer_state.SetLabel("‖ ")
+                 self.SetMessageValue(_("Timer stop"))
+ 
+     def Timer_Restart(self):
+@@ -1838,7 +1839,7 @@
+                     self.timer.Stop()
+                     self.timer.Start(value)
+                     self.timer_current_value = value
+-                    self.middlePanel.timer_state.SetLabel(u"〉 ")
++                    self.middlePanel.timer_state.SetLabel("〉 ")
+                     self.SetMessageValue(_("Timer start"))
+ 
+     def SetMessageValue(self, text, last=False):
+@@ -1888,8 +1889,8 @@
+         label_title = wx.StaticText(self, -1, _("Quick Menu Setup"))
+         label_title.SetFont(dbmenus.big_font)
+         self.listbox = wx.ListBox(self, -1, (20, 20), (230, 420), "", wx.LB_SINGLE)
+-        list_up = wx.Button(self, -1, label=u"↑")
+-        list_down = wx.Button(self, -1, label=u"↓")
++        list_up = wx.Button(self, -1, label="↑")
++        list_down = wx.Button(self, -1, label="↓")
+         list_app_delete = wx.Button(self, -1, label=_("Del"))
+         list_app_save = wx.Button(self, -1, label=_("Save"))
+         list_app_clear = wx.Button(self, -1, label=_("Clear"))
+@@ -1909,7 +1910,7 @@
+         cmd_close = wx.Button(self, -1, label=_("Close"))
+ 
+         label_lang = wx.StaticText(self, -1, _("Language"))
+-        self.radio_zh = wx.RadioButton(self, -1, u"中文", style=wx.RB_GROUP)
++        self.radio_zh = wx.RadioButton(self, -1, "中文", style=wx.RB_GROUP)
+         self.radio_en = wx.RadioButton(self, -1, "English")
+         self.Bind(wx.EVT_RADIOBUTTON, self.OnRadioLanguage, self.radio_zh)
+         self.Bind(wx.EVT_RADIOBUTTON, self.OnRadioLanguage, self.radio_en)
+@@ -2638,8 +2639,8 @@
+     def get_new_version_info(self):
+         # get web version
+         try:
+-            info = urllib2.urlopen(self.url_info)
+-        except urllib2.HTTPError, e:
++            info = urllib.request.urlopen(self.url_info)
++        except urllib.error.HTTPError as e:
+             # print e.fp.read()
+             return
+             
+@@ -2715,8 +2716,8 @@
+         try:
+             f = zipfile.ZipFile(filename)
+             f.extractall()
+-        except zipfile.error, e:
+-            print "Bad zipfile: %s" % (e) 
++        except zipfile.error as e:
++            print("Bad zipfile: %s" % (e)) 
+ 
+         f.close() 
+         # print "extract end"
+@@ -2743,9 +2744,9 @@
+ 
+         label_title = wx.StaticText(self, -1, _("About NewMenus"))
+         label_title.SetFont(dbmenus.big_font)
+-        alipay = wx.StaticText(self, -1, u"支付宝: luckrill@163.com", size=(500, -1))
+-        paypal = wx.StaticText(self, -1, u"PayPal: luckrill@163.com", size=(500, -1))
+-        email = wx.StaticText(self, -1, u" Email: luckrill@163.com", size=(500, -1))
++        alipay = wx.StaticText(self, -1, "支付宝: luckrill@163.com", size=(500, -1))
++        paypal = wx.StaticText(self, -1, "PayPal: luckrill@163.com", size=(500, -1))
++        email = wx.StaticText(self, -1, " Email: luckrill@163.com", size=(500, -1))
+         self.text_about = wx.TextCtrl(self, -1, "", size=(650, 410), style=wx.TE_MULTILINE|wx.TE_READONLY)
+         self.text_about.SetFont(dbmenus.big_font)
+         button_close = wx.Button(self, -1, label=_("Close"))

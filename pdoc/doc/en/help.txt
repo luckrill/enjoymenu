@@ -1,0 +1,44 @@
+<@>header<@>
+totals = 5
+<@>content<@>
+@__file_content_item__@
+This is an image viewer, management, merge, reduced picture tools.
+
+@__file_content_item__@
+Reduce: Choose one, several, or more pictures, input to reduce the percentage, reduce image, new images stored in the above hints of output, can be modified again.
+
+Merge: Choose one, several, or more pictures, enter the split window with pictures.
+
+Manage: Choose one, several, or more pictures, copy to a certain place or execute delete. 
+  "Reset" button clear select* infor and copy path info, then need reselect new copyto path.
+  "Copyto": require select output path only once.
+  "dirs": need select "dirs" at first, then select path to support sub directory search.
+
+Image viewer: Full-screen window mode to browse pictures slide way. Three kinds of start ways: double click on the picture, double-click the file name, click the browse button in the list.
+
+@__file_content_item__@
+Enter a single image sizes, choose the number of columns
+
+Can sort pictures and support merge preview.
+
+Output path is still the main window, can modification in the main window.
+
+@__file_content_item__@
+Full-screen window mode to browse pictures.
+
+Zoom, rotate, rotate preservation, slide shows and other functions.
+
+Choose one or several pictures, copy to another place or execute delete.
+
+PageUp/PageDown support quick skip.
+
+@__file_content_item__@
+From main window select "Setup" go into setup window.
+
+* system configuration, support for multiple languages, merge image format support JPG or PNG images, default merge images size of a single picture, slideshow play default delay
+
+* help information, introduces basic functions to use
+
+* upgrade online, provide online check new version and upgrades
+
+* about NewImages, introduce relevant information

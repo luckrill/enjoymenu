@@ -1,0 +1,12 @@
+busybox ifconfig eth0 hw ether 00:24:67:4c:76:83
+busybox ifconfig eth0 hw ether 00:02:72:DF:F1:60
+busybox ifconfig eth0 hw ether 00:02:72:DF:F1:7C
+
+setenv ipaddr 172.17.14.45; setenv serverip 172.17.50.81; setenv gatewayip 172.17.0.1; setenv netmask 255.255.0.0; saveenv
+
+tftp 9A000000 update_boot && source 9A000000; tftp 9A000000 update_img && source 9A000000; boot
+
+macaddr write philips 12 34 67 4c 86 23
+
+setenv ipaddr 192.168.0.44; setenv serverip 192.168.0.2; setenv gatewayip 192.168.0.1; setenv netmask 255.255.255.0; saveenv
+setenv ipaddr 172.17.14.45; setenv serverip 172.17.1.45; setenv gatewayip 172.17.0.1; setenv netmask 255.255.0.0; saveenv
