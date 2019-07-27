@@ -4,7 +4,7 @@ import wx
 import os
 import sys
 import subprocess
-import codecs
+#import codecs
 import shutil
 import random
 import zipfile
@@ -130,24 +130,25 @@ class DBmenus():
             return
 
         #import chardet
-        from chardet.universaldetector import UniversalDetector
-        print("test")
-        detector = UniversalDetector()
-        detector.reset()
-        for line in file(dbmenus.config_file, 'rb'):
-            detector.feed(line)
-            if detector.done: break
-        detector.close()
-        print(detector.result)
+        # from chardet.universaldetector import UniversalDetector
+        # print("test")
+        # detector = UniversalDetector()
+        # detector.reset()
+        # for line in file(dbmenus.config_file, 'rb'):
+        #     detector.feed(line)
+        #     if detector.done: break
+        # detector.close()
+        # print(detector.result)
 
-        f = open(dbmenus.config_file, 'rb')
-        detector.feed(f)
-        print(detector.result)
-
-        fd = open(dbmenus.config_file, mode='r')
+        # f = open(dbmenus.config_file, 'rb')
+        # detector.feed(f)
+        # print(detector.result)
+        #print(dbmenus.config_file)
+        fd = open(dbmenus.config_file, mode='rt', encoding="utf-8")
 
         while True:
-            line = fd.readline().encode()
+            line = fd.readline()
+            #print(line)
             if not line:
                 break
             line = line.strip()
@@ -193,20 +194,20 @@ class DBmenus():
     def ConfigSave(self):
         """save window config info to current dict and config file"""
         #print "Config Save"
-        fd = open(dbmenus.config_file, 'w')
+        fd = open(dbmenus.config_file, 'w', encoding="utf-8")
         for key in list(dbmenus.current.keys()):
             fd.write(str(key) + " = " + str(dbmenus.current[key]) + "\n")
         fd.close()
 
     def quickmenu_write(self):
-        fd = open(dbmenus.quickmenu_filename, 'w')
+        fd = open(dbmenus.quickmenu_filename, 'w', encoding="utf-8")
         for li in dbmenus.menus:
             line = "::".join(ele for ele in li) + "\n"
             fd.write(line)
         fd.close()
 
     def get_text_total_num(self, filename):
-        fd = open(filename, mode='r')
+        fd = open(filename, mode='rt', encoding="utf-8")
         item_num = 0
         while True:
             line = fd.readline()
@@ -229,7 +230,8 @@ class DBmenus():
         if (index < 1):
             return text
         # fd = codecs.open(dbmenus.famous_file, mode='r', encoding="utf-8")
-        fd = open(filename, mode='r')
+        print(filename)
+        fd = open(filename, mode='rt', encoding="utf-8")
         item_num = 0
         found_item = False
         while True:
@@ -612,7 +614,7 @@ class AppPanel(wx.Panel):
     def quickmenu_read(self):
         if os.path.isfile(dbmenus.quickmenu_filename):
             # fd = open(dbmenus.quickmenu_filename, 'r')
-            fd = open(dbmenus.quickmenu_filename, mode='r')
+            fd = open(dbmenus.quickmenu_filename, mode='r', encoding="utf-8")
 
             del dbmenus.menus[:]
             while True:
@@ -2506,7 +2508,7 @@ class SetupHelpPage(wx.Panel):
         help_text = ""
         if (index < 1):
             return help_text
-        fd = open(self.help_file, mode='r')
+        fd = open(self.help_file, mode='rt', encoding="utf-8")
         item_num = 0
         found_item = False
         while True:
