@@ -1297,7 +1297,8 @@ class MiddlePanel(wx.Panel):
         self.SetSizer(sizer)
         self.Layout()
 
-        self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnChanged)
+        #self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnChanged)
+        self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGING, self.OnChanged)
         self.Bind(wx.EVT_BUTTON, self.OnShutdown, button_shutdown)
         self.Bind(wx.EVT_BUTTON, self.OnRestart, button_restart)
         self.Bind(wx.EVT_BUTTON, self.OnLock, button_lock)
@@ -2846,7 +2847,9 @@ class SetupFrame(wx.Frame):
         panel.Layout()
         #sizer.Fit(self)
 
-        self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnChanged)
+        #self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnChanged)
+        
+        self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGING, self.OnChanged)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
 
         self.messagetimer = wx.Timer(self)

@@ -2,5 +2,5 @@ lang = 中文
 timer_timeout = 60
 timer_enable = 1
 help_enable = 1
-nb = 0
+nb = 3
 text_size = 5
