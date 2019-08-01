@@ -1,6 +1,9 @@
 
-EnjoyMenus
+EnjoyWork
 
-now start support python3 and database and web.
+For 1.0 version, named NewMenus
+Now named as EnjoyWork.
+
+Start support python3 and will support database and web.
 
 ![](image/enjoymenu.png)
