@@ -14,6 +14,7 @@ import wx.media
 import webbrowser
 #import winshell
 import importlib
+import markdown
 
 # if platform.system() == "Windows":
 #     import win32con
@@ -579,9 +580,18 @@ class AppPanel(wx.Panel):
             self.sizer.Add(button_cmd, 0, wx.ALIGN_CENTER)
             button_cmd.Bind(wx.EVT_BUTTON, self.OnCommand)
 
+        # add Markdown 
+        button_markdown = wx.Button(self, label="Markdown", size=(90 , 30))
+        self.subs.append(button_markdown)
+        self.sizer.Add(button_markdown, 0, wx.ALIGN_CENTER)
+        button_cmd.Bind(wx.EVT_BUTTON, self.OnMarkdown)
+
         #self.Refresh()
         self.SetSizer(self.sizer)
         self.Layout()
+
+    def OnMarkdown(self, event):
+        pass
 
     def OnCommand(self, event):
         name = event.GetEventObject().name

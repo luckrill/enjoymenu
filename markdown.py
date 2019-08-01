@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import wx
+import os
+
 class MarkdownFrame(wx.Frame):
     """MarkdownFrame class, sub window."""
     def __init__(self, mainframe):
