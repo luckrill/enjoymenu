@@ -670,9 +670,14 @@ class TextPage(wx.Panel):
         #self.text_multi_text.SetBackgroundColour("DARK GREY")
 
         button_close = wx.Button(self, -1, label=_("Close"))
+        button_save = wx.Button(self, -1, label=_("Save"))
 
         vbox_cmd = wx.BoxSizer(wx.HORIZONTAL)
+        vbox_cmd.Add(button_save, 0, wx.ALIGN_CENTER)
+        vbox_cmd.Add((5, 5))
         vbox_cmd.Add(button_close, 0, wx.ALIGN_CENTER)
+
+
 
         vbox_top = wx.BoxSizer(wx.VERTICAL)
         vbox_top.Add((5, 5))
@@ -689,6 +694,7 @@ class TextPage(wx.Panel):
         #print "text init and settextctrl"
 
         self.Bind(wx.EVT_BUTTON, self.OnClose, button_close)
+        self.Bind(wx.EVT_BUTTON, self.OnSave, button_save)
         #self.text_multi_text.Bind(wx.EVT_CHAR, self.OnChar)
         self.text_multi_text.Bind(wx.EVT_KEY_UP, self.OnKeyUp)
         # mouse, win leftup have bug
@@ -735,6 +741,9 @@ class TextPage(wx.Panel):
         endPos = self.text_multi_text.XYToPosition(length, line)
 
         self.text_multi_text.SetSelection(startPos, endPos)
+
+    def OnSave(self, event):
+        self.text_multi_text.SaveFile(self.text_file)
 
     def OnClose(self, event):
         self.GetTopLevelParent().OnClose(event)
@@ -2302,10 +2311,10 @@ class SetupPage(wx.Panel):
     def OnCmdClose(self, event):
         if self.SetupContentChanged:
             self.GetTopLevelParent().main_frame.Timer_Restart()
-            self.quickmenu_read_write(True)
+            #self.quickmenu_read_write(True)
             self.GetTopLevelParent().SetMessageValue(_("Saved app menu"))
             self.GetTopLevelParent().main_frame.addApp()
-            dbmenus.ConfigSave()
+            #dbmenus.ConfigSave()
 
 
         self.GetTopLevelParent().Destroy()
@@ -2356,7 +2365,7 @@ class SetupFamousPage(wx.Panel):
         self.Parse_famous_content()
         # wxPython 2.9.5 + winXP, TextCtrl->SaveFile() have bug
         self.text_multi_text.SaveFile(dbmenus.famous_file)
-        dbmenus.ConfigSave()
+        #dbmenus.ConfigSave()
         # content = self.text_multi_text.GetValue()
         # fd = open(dbmenus.famous_file, 'w')
         # fd.write(content)
@@ -2468,7 +2477,7 @@ class SetupHelpPage(wx.Panel):
         self.Bind(wx.EVT_BUTTON, self.OnClose, button_close)
 
     def OnClose(self, event):
-        dbmenus.ConfigSave()
+        #dbmenus.ConfigSave()
         self.GetTopLevelParent().Destroy()
 
     def __AddTreeNodes(self, parentItem):
@@ -2607,7 +2616,7 @@ class SetupUpdatePage(wx.Panel):
         self.Bind(wx.EVT_BUTTON, self.OnClose, button_close)
 
     def OnClose(self, event):
-        dbmenus.ConfigSave()
+        #dbmenus.ConfigSave()
         self.GetTopLevelParent().Destroy()
 
     def OnUpdate(self, event):
@@ -2848,7 +2857,7 @@ class SetupFrame(wx.Frame):
         #sizer.Fit(self)
 
         #self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnChanged)
-        
+
         self.nb.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGING, self.OnChanged)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
 
@@ -2876,7 +2885,7 @@ class SetupFrame(wx.Frame):
         if old_index == 0:
             if self.setup_page.SetupContentChanged:
                 self.GetTopLevelParent().main_frame.Timer_Restart()
-                self.setup_page.quickmenu_read_write(True)
+                #self.setup_page.quickmenu_read_write(True)
                 self.SetMessageValue(_("Saved app menu"))
                 self.main_frame.addApp()
 
