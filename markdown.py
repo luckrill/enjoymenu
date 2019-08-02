@@ -7,8 +7,10 @@ class MarkdownFrame(wx.Frame):
     """MarkdownFrame class, sub window."""
     def __init__(self):
         """Create a Frame instance"""
-        wx.Frame.__init__(self, None, title="MarkdownFrame", size=(1024, 800))
-        # self.ShowFullScreen(True, style=wx.FULLSCREEN_ALL)
+        wx.Frame.__init__(self, None, title="MarkdownFrame", size=(1280, 800))
+        #self.ShowFullScreen(True, style=wx.FULLSCREEN_ALL)
+        #self.ShowFullScreen(True, style=wx.FULLSCREEN_ALL)
+        self.Maximize(True)
         self.Centre()
 
         #self.main_frame = mainframe
@@ -49,6 +51,7 @@ class MarkdownFrame(wx.Frame):
         button_markdown = wx.Button(self, -1, label="Markdown")
         button_source = wx.Button(self, -1, label="Source")
         button_save = wx.Button(self, -1, label="Save")
+        button_close = wx.Button(self, -1, label="Close")
 
         vbox_cmd2 = wx.BoxSizer(wx.HORIZONTAL)
         vbox_cmd2.Add(url_label, 0, wx.ALIGN_LEFT)
@@ -59,7 +62,8 @@ class MarkdownFrame(wx.Frame):
         vbox_cmd2.Add(button_source, 0, wx.ALIGN_LEFT)
         vbox_cmd2.Add((5, 5))
         vbox_cmd2.Add(button_save, 0, wx.ALIGN_LEFT)
-
+        vbox_cmd2.Add((5, 5))
+        vbox_cmd2.Add(button_close, 0, wx.ALIGN_LEFT)
         # for vbox_bottom
         # button_save2 = wx.Button(self, -1, label="Save2")
         # button_close = wx.Button(self, -1, label="Close")
@@ -98,7 +102,8 @@ class App(wx.App):
     def OnInit(self):
         self.frame = MarkdownFrame()
         self.frame.Show(True)
-        self.SetTopWindow(self.frame)
+        #self.frame.Maximize(True)
+        #self.SetTopWindow(self.frame)
         return True
 
 def main():
