@@ -580,7 +580,7 @@ class AppPanel(wx.Panel):
             self.sizer.Add(button_cmd, 0, wx.ALIGN_CENTER)
             button_cmd.Bind(wx.EVT_BUTTON, self.OnCommand)
 
-        # add Markdown 
+        # add Markdown
         button_markdown = wx.Button(self, label="Markdown", size=(90 , 30))
         self.subs.append(button_markdown)
         self.sizer.Add(button_markdown, 0, wx.ALIGN_CENTER)
