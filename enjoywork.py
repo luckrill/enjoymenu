@@ -38,7 +38,9 @@ def check_path():
         open(config_file, 'a+')
     except IOError as e:
         # app_path = os.environ['APPDATA']
-        app_path = os.environ['PROGRAMDATA']
+        # app_path = os.environ['PROGRAMDATA']
+        app_path = os.path.dirname(os.path.realpath(__file__))
+        app_path
         root_newmenus = app_path+os.sep+"newmenus"
         if not os.path.exists(root_newmenus):
             os.mkdir(root_newmenus)
@@ -753,7 +755,7 @@ class TextPage(wx.Panel):
         self.text_multi_text.SetSelection(startPos, endPos)
 
     def OnSave(self, event):
-        self.text_multi_text.SaveFile(self.text_file)
+        self.text_multi_text.SaveFile(dbmenus.text_file)
 
     def OnClose(self, event):
         self.GetTopLevelParent().OnClose(event)
@@ -2220,7 +2222,8 @@ class SetupPage(wx.Panel):
         # dialog = wx.DirDialog(None,"Choose a directory:",
         #                       style=wx.DD_DEFAULT_STYLE|wx.DD_DIR_MUST_EXIST)
         #os.environ['PROGRAMDATA']
-        spath = os.environ['PROGRAMDATA']
+        # spath = os.environ['PROGRAMDATA']
+        spath = os.path.dirname(os.path.realpath(__file__))
         dialog = wx.FileDialog(self, "Choose app", spath, "",
                                       "*.*",
                                       wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)

@@ -18,141 +18,106 @@ day = datetime.datetime.now().day
 # A = 65 Z=90, a = 97 z=122, chr(num), ord('chr')
 # 主人名字 + 日 + a; 一天最多四十几篇，足够了。
 
-# os.chdir("target dir")
-# os.getcwd()
-
-url = "https://mp.weixin.qq.com/s?src=11&timestamp=1564838047&ver=1768&signature=bgobUY*x59iFqbagdjg7f7XdxKQSsIW9irHRz1a3W9il9CFZzN5Vr9h5TeJuf4yMndRfypRCNeQ*mnF8ZoNRxizMIbYtp3zX2bnUhhv6jvo6P6imVyRg2bBmKJVB6Faz&new=1"
+url = ""
 param = ""
 
 class MarkdownFrame(wx.Frame):
     """Markdown Please class, sub window."""
     def __init__(self):
         """Create a Frame instance"""
-        wx.Frame.__init__(self, None, title="Markdown Please", size=(1280, 800))
-        #self.ShowFullScreen(True, style=wx.FULLSCREEN_ALL)
-        #self.ShowFullScreen(True, style=wx.FULLSCREEN_ALL)
-        self.Maximize(True)
+        wx.Frame.__init__(self, None, title="Markdown Please", size=(900, 800), style=wx.DEFAULT_FRAME_STYLE)
+        # wx.Panel.__init__(self)
+        # self.Maximize(True)
         self.Centre()
 
         #self.main_frame = mainframe
         #self.current_index = 0
 
         panel = wx.Panel(self, size=self.GetSize())
+        # panel = wx.Panel(self, -1)
 
-        sizer = wx.BoxSizer()
-
-        # self.sizer.Add(self.appPanel, 0, wx.EXPAND)
-        # self.sizer.Add(wx.StaticLine(self), flag=wx.EXPAND)
-
-        # HORIZONTAL 水平
 
         # for vbox_cmd1
-        url_param_label = wx.StaticText(self, -1, "Param:")
-        self.url_param_text = wx.TextCtrl(self, -1, "", size=(300, -1))
-        radio_1 = wx.RadioButton(self, -1, "radio1", style=wx.RB_GROUP)
-        radio_2 = wx.RadioButton(self, -1, "radio2")
-        radio_3 = wx.RadioButton(self, -1, "radio3")
+        url_param_label = wx.StaticText(panel, -1, "Param:")
+        self.url_param_text = wx.TextCtrl(panel, -1, "", size=(300, -1))
 
-        self.Bind(wx.EVT_RADIOBUTTON, self.OnRadio_1, radio_1)
-        self.Bind(wx.EVT_RADIOBUTTON, self.OnRadio_2, radio_2)
-        self.Bind(wx.EVT_RADIOBUTTON, self.OnRadio_3, radio_3)
+        self.button_markdown = wx.Button(panel, -1, label="Markdown")
+        self.button_markdown.SetDefault()
+        # self.button_markdown.SetSize(button_markdown.GetBestSize())
+        # self.button_markdown.SetToolTip("This is a Hello button...")
+        self.button_reset = wx.Button(panel, -1, label="Reset")
+        # button_reset.SetDefault()
+        button_tellme = wx.Button(panel, -1, label="TellMe")
+        button_tellme.SetToolTip("TellMe Something ... Please")
+        button_close = wx.Button(panel, -1, label="Close")
 
         vbox_cmd1 = wx.BoxSizer(wx.HORIZONTAL)
         vbox_cmd1.Add(url_param_label, 0, wx.ALIGN_LEFT)
         vbox_cmd1.Add(self.url_param_text, 0, wx.ALIGN_LEFT)
         vbox_cmd1.Add((5, 5))
-        vbox_cmd1.Add(radio_1, 0, wx.ALIGN_LEFT)
+        vbox_cmd1.Add(self.button_markdown, 0, wx.ALIGN_LEFT)
         vbox_cmd1.Add((5, 5))
-        vbox_cmd1.Add(radio_2, 0, wx.ALIGN_LEFT)
+        vbox_cmd1.Add(self.button_reset, 0, wx.ALIGN_LEFT)
         vbox_cmd1.Add((5, 5))
-        vbox_cmd1.Add(radio_3, 0, wx.ALIGN_LEFT)
+        vbox_cmd1.Add(button_tellme, 0, wx.ALIGN_LEFT)
+        vbox_cmd1.Add((5, 5))
+        vbox_cmd1.Add(button_close, 0, wx.ALIGN_LEFT)
 
-
-        # for vbox_cmd2
-        url_label = wx.StaticText(self, -1, "URL:")
-        self.url_text = wx.TextCtrl(self, -1, url, size=(650, -1))
-        button_markdown = wx.Button(self, -1, label="Markdown")
-        button_source = wx.Button(self, -1, label="Source")
-        button_save = wx.Button(self, -1, label="Save")
-        button_tellme = wx.Button(self, -1, label="TellMe")
-        button_close = wx.Button(self, -1, label="Close")
-
-        self.Bind(wx.EVT_BUTTON, self.OnMarkdown, button_markdown)
-        self.Bind(wx.EVT_BUTTON, self.OnSource, button_source)
-        self.Bind(wx.EVT_BUTTON, self.OnSave, button_save)
+        self.Bind(wx.EVT_BUTTON, self.OnMarkdown, self.button_markdown)
+        self.Bind(wx.EVT_BUTTON, self.OnReset, self.button_reset)
         self.Bind(wx.EVT_BUTTON, self.OnTellMe, button_tellme)
         self.Bind(wx.EVT_BUTTON, self.OnClose, button_close)
+
+        # for vbox_cmd2
+        url_label = wx.StaticText(panel, -1, "    URL:")
+        self.url_text = wx.TextCtrl(panel, -1, url, size=(850, -1))
 
         vbox_cmd2 = wx.BoxSizer(wx.HORIZONTAL)
         vbox_cmd2.Add(url_label, 0, wx.ALIGN_LEFT)
         vbox_cmd2.Add(self.url_text, 0, wx.ALIGN_LEFT)
-        vbox_cmd2.Add((5, 5))
-        vbox_cmd2.Add(button_markdown, 0, wx.ALIGN_LEFT)
-        vbox_cmd2.Add((5, 5))
-        vbox_cmd2.Add(button_source, 0, wx.ALIGN_LEFT)
-        vbox_cmd2.Add((5, 5))
-        vbox_cmd2.Add(button_save, 0, wx.ALIGN_LEFT)
-        vbox_cmd2.Add((5, 5))
-        vbox_cmd2.Add(button_tellme, 0, wx.ALIGN_LEFT)
-        vbox_cmd2.Add((5, 5))
-        vbox_cmd2.Add(button_close, 0, wx.ALIGN_LEFT)
-        # for vbox_bottom
-        # button_save2 = wx.Button(self, -1, label="Save2")
-        # button_close = wx.Button(self, -1, label="Close")
-
-        # vbox_bottom = wx.BoxSizer(wx.HORIZONTAL)
-        # vbox_bottom.Add(button_save2, 0, wx.ALIGN_CENTER)
-        # vbox_bottom.Add(button_close, 0, wx.ALIGN_CENTER)
 
         # for vbox_top
-        self.text_multi_text = wx.TextCtrl(self, -1, "", size=(300, 200), style=wx.TE_MULTILINE)
+        self.text_multi_text = wx.TextCtrl(panel, -1, "", size=(300, 200), style=wx.TE_MULTILINE)
+
         vbox_top = wx.BoxSizer(wx.VERTICAL)
         vbox_top.Add(vbox_cmd1, flag=wx.ALIGN_LEFT)
         vbox_top.Add((5, 5))
         vbox_top.Add(vbox_cmd2, flag=wx.ALIGN_LEFT)
         vbox_top.Add((5, 5))
         vbox_top.Add(self.text_multi_text, 1, wx.EXPAND)
-        #vbox_top.Add(vbox_bottom, 0, flag=wx.ALIGN_LEFT)
+
+
 
         panel.SetSizer(vbox_top)
         panel.Layout()
-        #sizer.Fit(self)
+
+        self.url_text.SetFocus()
 
         self.Bind(wx.EVT_CLOSE, self.OnClose)
 
     def OnMarkdown(self, event):
-        self.text_multi_text.SetValue("on markdown")
+        # self.text_multi_text.SetValue("on markdown")
         url = self.url_text.GetValue()
-        result = self.html_to_md(url)
-        self.text_multi_text.SetValue(result)
+        if url:
+            result = self.html_to_md(url)
+            self.text_multi_text.SetValue(result)
+            self.button_reset.SetDefault()
+            self.text_multi_text.SetFocus()
 
-    def OnSource(self, event):
-        self.text_multi_text.SetValue("on source")
+    def OnReset(self, event):
+        self.text_multi_text.SetValue("")
+        self.button_markdown.SetDefault()
+        self.url_text.SetFocus()
 
-    def OnRadio_1(self, event):
-        self.url_param_text.SetValue("radio_1")
-
-    def OnRadio_2(self, event):
-        self.url_param_text.SetValue("radio_2")
-
-    def OnRadio_3(self, event):
-        self.url_param_text.SetValue("radio_3")
-
-    def OnSave(self, event):
-        self.text_multi_text.SetValue("on save")
-
-        url = self.url_text.GetValue()
-        asyncio.get_event_loop().run_until_complete(self.test(url))
-
-        self.text_multi_text.SetValue("on test now")
 
     def OnTellMe(self, event):
-        # self.text_multi_text.SetValue("on tellme")
-        dlg = wx.TextEntryDialog(None, "TellMe Something:", caption='TellMe Please', style=wx.TE_MULTILINE | wx.OK | wx.CANCEL | wx.CENTRE)
+        # dlg = wx.TextEntryDialog(None, "TellMe Something:", caption='TellMe Please', style=wx.TE_MULTILINE | wx.OK | wx.CANCEL | wx.CENTRE)
+        dlg = wx.TextEntryDialog(self, "TellMe Something:", caption='TellMe Please', style=wx.TE_MULTILINE | wx.OK  |  wx.CANCEL  |  wx.CENTRE, pos=wx.DefaultPosition)
         if dlg.ShowModal() == wx.ID_OK:
             message = dlg.GetValue()
-            print(message)
-            self.send_email(message)
+            if message:
+                print(message)
+                self.send_email(message)
         dlg.Destroy()
 
 
