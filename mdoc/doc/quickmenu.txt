@@ -1,2 +1,4 @@
-我的电脑::explorer.exe ,
-Firefox::C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+我的电脑::explorer.exe
+Chrome::C:\Program Files\Google\Chrome\Application\chrome.exe
+Cmder::D:\Program\cmder\Cmder.exe
+Atom::C:\Users\Thinkpad\AppData\Local\atom\atom.exe

@@ -12,7 +12,7 @@ import urllib.request, urllib.error, urllib.parse
 import platform
 import wx.media
 # import webbrowser
-import winshell
+#import winshell
 import importlib
 # import markgdown
 
@@ -29,8 +29,8 @@ CONTENT_ITEM_TAG = "@__file_content_item__@"
 
 def check_path():
     basepath = os.path.abspath(os.path.dirname(sys.argv[0]))
-    # if os.path.exists(os.path.join(basepath, "newmenus", "mdoc", "doc", "Config")):
-    #     basepath = os.path.abspath(os.path.join(basepath, "newmenus"))
+    if os.path.exists(os.path.join(basepath, "newmenus", "mdoc", "doc", "Config")):
+        basepath = os.path.abspath(os.path.join(basepath, "newmenus"))
 
     config_file = os.path.join(basepath, "mdoc", "doc", "Config")
 
@@ -39,16 +39,15 @@ def check_path():
     except IOError as e:
         # app_path = os.environ['APPDATA']
         # app_path = os.environ['PROGRAMDATA']
-        print("check doc path")
         app_path = os.path.dirname(os.path.realpath(__file__))
-        # app_path
-        root_enjoywork = app_path+os.sep+"enjoywork"
-        if not os.path.exists(root_enjoywork):
-            os.mkdir(root_enjoywork)
-        if not os.path.exists(root_enjoywork+os.sep+"doc"):
-            shutil.copytree(basepath+os.sep+"doc", root_enjoywork+os.sep+"doc")
-            shutil.copytree(basepath+os.sep+"locale", root_enjoywork+os.sep+"locale")
-        basepath = root_enjoywork
+        app_path
+        root_newmenus = app_path+os.sep+"newmenus"
+        if not os.path.exists(root_newmenus):
+            os.mkdir(root_newmenus)
+        if not os.path.exists(root_newmenus+os.sep+"doc"):
+            shutil.copytree(basepath+os.sep+"doc", root_newmenus+os.sep+"doc")
+            shutil.copytree(basepath+os.sep+"locale", root_newmenus+os.sep+"locale")
+        basepath = root_newmenus
 
     return basepath
 
@@ -72,7 +71,7 @@ class DBmenus():
     famous_file = os.path.join(basepath_doc, "famous.txt")
     message_file = os.path.join(basepath_doc, "message.html")
 
-    current = {"lang":"English", "timer_timeout": 60, "timer_enable":1, "help_enable":1, "nb":0, "text_size": 0 }
+    current = {"lang":"English", "timer_timeout": 60, "timer_enable":1, "help_enable":1, "nb":0, "text_size": 3 }
 
 
     def __init__(self):
@@ -100,7 +99,7 @@ class DBmenus():
         #     self.basepath = app_path
 
     # def CheckStartup(self):
-    #     path = os.path.join(winshell.startup(), "enes.lnk")
+    #     path = os.path.join(winshell.startup(), "NewMenus.lnk")
     #     if os.path.exists(path):
     #         return True
     #     else:
@@ -109,23 +108,23 @@ class DBmenus():
     def Startup(self):
         startup = winshell.startup()
         #print startup
-        path = os.path.join(startup, "enjoywork.lnk")
+        path = os.path.join(startup, "NewMenus.lnk")
         winshell.CreateShortcut (
             Path = path,
             Target = sys.executable,
             Icon = (sys.executable, 0),
-            Description = "enjoywork"
+            Description = "NewMenus"
         )
 
     def Desktop(self):
         desktop = winshell.desktop()
         #print desktop
-        path = os.path.join(desktop, "enjoywork.lnk")
+        path = os.path.join(desktop, "NewMenus.lnk")
         winshell.CreateShortcut (
             Path = path,
             Target = sys.executable,
             Icon = (sys.executable, 0),
-            Description = "enjoywork"
+            Description = "NewMenus"
         )
 
     def ConfigLoad(self):
@@ -204,7 +203,6 @@ class DBmenus():
         fd.close()
 
     def quickmenu_write(self):
-        print("quickmenu_write")
         fd = open(dbmenus.quickmenu_filename, 'w', encoding="utf-8")
         for li in dbmenus.menus:
             line = "::".join(ele for ele in li) + "\n"
@@ -235,7 +233,7 @@ class DBmenus():
         if (index < 1):
             return text
         # fd = codecs.open(dbmenus.famous_file, mode='r', encoding="utf-8")
-        # print(filename)
+        print(filename)
         fd = open(filename, mode='rt', encoding="utf-8")
         item_num = 0
         found_item = False
@@ -558,6 +556,7 @@ class DBmenus():
             wx.TheClipboard.Close()
             return text
 
+
 class AppPanel(wx.Panel):
     def __init__(self, *args, **kwargs):
         wx.Panel.__init__(self, *args, **kwargs)
@@ -577,17 +576,17 @@ class AppPanel(wx.Panel):
             self.number_of_command += 1
             ##name = li[0].decode("utf-8")
             name = li[0]
-            button_cmd = wx.Button(self, label=name, name=name, size=(80 , 30))
+            button_cmd = wx.Button(self, label=name, name=name, size=(90 , 30))
             self.subs.append(button_cmd)
             button_cmd.name = name
             self.sizer.Add(button_cmd, 0, wx.ALIGN_CENTER)
             button_cmd.Bind(wx.EVT_BUTTON, self.OnCommand)
 
         # add Markdown
-        # button_markdown = wx.Button(self, label="Markdown", size=(90 , 30))
-        # self.subs.append(button_markdown)
-        # self.sizer.Add(button_markdown, 0, wx.ALIGN_CENTER)
-        # button_cmd.Bind(wx.EVT_BUTTON, self.OnMarkdown)
+        button_markdown = wx.Button(self, label="Markdown", size=(90 , 30))
+        self.subs.append(button_markdown)
+        self.sizer.Add(button_markdown, 0, wx.ALIGN_CENTER)
+        button_cmd.Bind(wx.EVT_BUTTON, self.OnMarkdown)
 
         #self.Refresh()
         self.SetSizer(self.sizer)
@@ -1501,19 +1500,18 @@ class MiddlePanel(wx.Panel):
     def OnShutdown(self, event):
         self.parse_shutdown_string()
         cmd = "shutdown /s -t " + str(self.shutdown_timeout)
-        subprocess.Popen(cmd, shell=True)
+        subprocess.Popen(cmd.encode("gbk"), shell=True)
         self.GetTopLevelParent().OnClose(event)
 
     def OnRestart(self, event):
         self.parse_shutdown_string()
         cmd = "shutdown /r -t " + str(self.shutdown_timeout)
-        subprocess.Popen(cmd, shell=True)
+        subprocess.Popen(cmd.encode("gbk"), shell=True)
         self.GetTopLevelParent().OnClose(event)
 
     def OnLock(self, event):
-        cmd = "Rundll32.exe user32.dll,LockWorkStation"
-        # cmd = "rundll32.exe user32.dll,LockWorkStation"
-        subprocess.Popen(cmd, shell=True)
+        cmd = "rundll32.exe user32.dll,LockWorkStation"
+        subprocess.Popen(cmd.encode("gbk"), shell=True)
 
     def OnChanged(self, event):
         #print "onchanged"
@@ -1565,7 +1563,7 @@ class MiddlePanel(wx.Panel):
 
 class MainFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, -1, "Enjoy Work", size=(960, 680))
+        wx.Frame.__init__(self, None, -1, "New Menus", size=(900, 700))
         self.SetIcon(wx.Icon('menus.ico', wx.BITMAP_TYPE_ICO))
 
         self.Center()
@@ -2310,14 +2308,13 @@ class SetupPage(wx.Panel):
         self.cmd_command.SetValue(menu[1])
 
     def OnCmdBackup(self, event):
-        print("OnCmdBackup")
         input_path = ""
         dialog = wx.DirDialog(None,"Choose a directory:",
                               style=wx.DD_DEFAULT_STYLE|wx.DD_DIR_MUST_EXIST)
         if dialog.ShowModal() == wx.ID_OK:
             input_path = dialog.GetPath().decode('utf-8')
             if os.path.exists(dbmenus.basepath_doc):
-                outpath = input_path + os.sep + "enjoywork_doc"
+                outpath = input_path + os.sep + "newmenu_doc"
                 if os.path.exists(outpath):
                     shutil.rmtree(outpath)
                 shutil.copytree(dbmenus.basepath_doc, outpath)
@@ -2328,7 +2325,7 @@ class SetupPage(wx.Panel):
     def OnCmdClose(self, event):
         if self.SetupContentChanged:
             self.GetTopLevelParent().main_frame.Timer_Restart()
-            self.quickmenu_read_write(True)
+            #self.quickmenu_read_write(True)
             self.GetTopLevelParent().SetMessageValue(_("Saved app menu"))
             self.GetTopLevelParent().main_frame.addApp()
             #dbmenus.ConfigSave()
@@ -2566,7 +2563,7 @@ class SetupUpdatePage(wx.Panel):
         self.web_version= "1.0"
 
         # self.version_file=os.path.join(dbmenus.basepath, "doc"+os.sep+"version.txt")
-        self.url_info = "https://readmorejoy.com/software/enjoywork/enjoywork.html"
+        self.url_info = "http://face2group.com/software/newmenus/newmenus.html"
         # self.url_info = "http://127.0.0.1/software/newimages/newimages.html"
         self.update_url = ""
         self.update_program = ""
@@ -2599,10 +2596,10 @@ class SetupUpdatePage(wx.Panel):
         vbox_grid.Add(label_new, pos=(1,0), flag=wx.ALIGN_RIGHT, border=10)
         vbox_grid.Add(self.text_new_version, pos=(1,1), flag=wx.ALIGN_LEFT, border=10)
 
-        vbox_features.Add(label_features, 0, wx.ALIGN_CENTER|wx.TOP)
+        vbox_features.Add(label_features, 0, wx.ALIGN_RIGHT|wx.TOP)
         vbox_features.Add(self.text_features, 0, wx.ALIGN_CENTER)
 
-        vbox_updatefile.Add(label_url_update, 0, wx.ALIGN_CENTER|wx.TOP)
+        vbox_updatefile.Add(label_url_update, 0, wx.ALIGN_RIGHT|wx.TOP)
         vbox_updatefile.Add(self.text_url_update, 0, wx.ALIGN_CENTER)
 
         vbox_cmd.Add(self.button_update, 0, wx.ALIGN_CENTER)
@@ -2659,7 +2656,7 @@ class SetupUpdatePage(wx.Panel):
 
         shutil.copy(self.update_program, "../")
         os.chdir("../")
-        cmd = self.update_program + " enjoywork"
+        cmd = self.update_program + " newmenus"
         subprocess.Popen(cmd.encode("gbk"))
 
     def get_local_version_info(self):
@@ -2793,7 +2790,7 @@ class SetupAboutPage(wx.Panel):
         else:
             self.about_file = os.path.join(dbmenus.basepath_doc, "zh", "about.txt")
 
-        label_title = wx.StaticText(self, -1, _("About enjoywork"))
+        label_title = wx.StaticText(self, -1, _("About NewMenus"))
         label_title.SetFont(dbmenus.big_font)
         alipay = wx.StaticText(self, -1, "支付宝: luckrill@163.com", size=(500, -1))
         paypal = wx.StaticText(self, -1, "PayPal: luckrill@163.com", size=(500, -1))
@@ -2924,10 +2921,9 @@ class FileDropTarget(wx.FileDropTarget):
         self.mainframe = mainframe
 
     def OnDropFiles(self, x, y, filenames):
-        print(filenames)
+        # print filenames
         first = True
         for file in filenames:
-            print(file)
             self.mainframe.appPanel.AddNewApp(file)
             # if first == True:
             #     self.mainframe.AddImageFiles(file, True)
@@ -2977,7 +2973,7 @@ class App(wx.App):
             langid = wx.LANGUAGE_ENGLISH_US
         else:
             langid = wx.LANGUAGE_CHINESE_SIMPLIFIED
-        domain = "enjoywork"             # the translation file is messages.mo
+        domain = "newmenus"             # the translation file is messages.mo
         L.Init(langid)
         L.AddCatalogLookupPathPrefix(localedir)
         L.AddCatalog(domain)
